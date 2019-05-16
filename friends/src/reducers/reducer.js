@@ -7,7 +7,6 @@ import {
 
 const initialState = {
     friends:[],
-    isLoading: false,
     error: '',
     isLoggingIn: false
 }
@@ -19,6 +18,17 @@ export const reducer = ( state = initialState, action ) => {
             ...state,
             isLoggingIn: true,
             error: ''
+        }
+        case LOGIN_SUCCESS: 
+        return {
+            ...state,
+            isLoggingIn: false,
+            error: ''
+        }
+        case LOGIN_FAILURE:
+        return {
+            ...state,
+            isLoggingIn: false
         }
 
         default:
