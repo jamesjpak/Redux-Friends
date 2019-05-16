@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import { login } from '../actions';
+import {login} from '../actions';
+import Loader from 'react-loader-spinner';
 
 class Login extends React.Component {
     state = {
@@ -22,6 +23,7 @@ class Login extends React.Component {
 
     login = e => {
         e.preventDefault();
+
         this.props.login(this.state.credentials)
     }
 
@@ -42,7 +44,11 @@ class Login extends React.Component {
                     />
 
                     <button>
-                        Log in
+                        {this.props.isLoggingIn ? ( 
+                            <Loader type="ThreeDots" color="#1f2a38" height="12" width="26" />
+                        ) : (
+                            'Log in'
+                        )}
                     </button>
                 </form>
             </div>

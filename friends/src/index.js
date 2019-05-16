@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 
 import { createStore, applyMiddleware } from 'redux';
-import { Provider } from '@babel/template';
+import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
